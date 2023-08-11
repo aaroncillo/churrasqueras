@@ -1,0 +1,15 @@
+<div class="container mt-5 d-flex justify-content-between">
+  <% @products.each do |p| %>
+    <div class="card" style="width: 18rem;">
+      <%= link_to product_path(p), class: "navbar-brand" do %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="card-img-top">
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= p.title %></h5>
+        <p class="card-text"><%= p.description %></p>
+        <p class="card-text"><%= p.price %></p>
+        <a href="#" class="btn btn-primary">Añadir al carro</a>
+      </div>
+    </div>
+  <% end %>
+</div>
