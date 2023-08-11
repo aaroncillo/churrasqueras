@@ -8,3 +8,11 @@
   <h1>HEADER</h1>
   <h1>HEADER</h1>
 </div>
+
+
+<% if current_user %>
+  <p>estas logeado en </p><%=current_user.email %>!
+  <p>Tu eres </p><%= current_user.role %>
+<% else %>
+  <p>no estas logeado</p>
+<% end %>
