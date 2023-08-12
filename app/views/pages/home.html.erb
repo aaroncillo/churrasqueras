@@ -1,18 +1,56 @@
-<div class="text-center">
-  <h1>Categories?</h1>
+<div class="d-flex justify-content-evenly mt-3">
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Planchas
+  </div>
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Braseros
+  </div>
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Cuchillos
+  </div>
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Tablas
+  </div>
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Parrillas
+  </div>
 </div>
 
-<div class="bg-secondary">
-  <h1>HEADER</h1>
-  <h1>HEADER</h1>
-  <h1>HEADER</h1>
-  <h1>HEADER</h1>
+<div class="container fotitos">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "brasero.png", alt: "cuchillo", class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "disco.png", alt: "brasero", class:"d-block w-100" %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
 
+
+<div class="container">
+
+  <h1> Productos</h1>
+
+</div>
 
 <% if current_user %>
   <p>estas logeado en </p><%=current_user.email %>!
-  <p>Tu eres </p><%= current_user.role %>
+  <% if current_user.role == 'admin' %>
+    <h1>ERES ADMIN Y SOLO TU VES ESTO</h1>
+  <% else %>
+    <h1>NO ERES ADMIN Y ERES NORMAL</h1>
+  <% end %>
 <% else %>
   <p>no estas logeado</p>
 <% end %>
